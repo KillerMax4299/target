@@ -16,10 +16,11 @@ function App() {
 
   const comp = useMemo(() => { 
     return dateArray.map(e=> new Date()>e)
-   }, [dateArray])
-  console.log(dateArray);
+  }, [dateArray])
+  const count = useMemo(() => ((comp.filter(Boolean).length / comp.length) * 100).toFixed(1), [comp]);
+
   return (
-    <div className="h-screen w-screen bg-orange-100 flex justify-center py-24">
+    <div className="h-screen w-screen bg-orange-100 flex flex-col items-center py-24 space-y-4">
       <div className="grid grid-cols-8 h-3/4 lg:h-full w-full lg:w-2/3 xl:w-1/2 gap-1 px-12 lg:px-24">
         {comp?.map((e, i) => (
           <div className="flex justify-center items-center">
@@ -27,6 +28,7 @@ function App() {
           </div>
         ))}
       </div>
+      <div className="oswald italic lg:text-3xl">{count}%</div>
     </div>
   );
 }
