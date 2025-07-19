@@ -3,7 +3,7 @@ import "./App.css";
 import { cn } from "@/lib/utils";
 
 function App() {
-  const endDate = new Date(new Date().getFullYear(), 7, 7); // Sept = 8 (0-based)
+  const endDate = new Date(new Date().getFullYear(), 7, 25); // Sept = 8 (0-based)
   const dateArray: Date[] = [];
   const startDate = new Date(new Date().getFullYear(), 5, 9);
 
